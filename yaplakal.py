@@ -7,10 +7,10 @@ from selenium import webdriver
 import aiohttp
 import asyncio
 
-url = "https://www.yaplakal.com/forum2/st/0/topic1879636.html"
+url = "https://www.yaplakal.com/forum2/topic2603235.html"
 base_url = "https://www.yaplakal.com/forum2/st/"
-gallery_name = "topic1879636"
-page_count = 482
+gallery_name = "olivia-dunne"
+page_count = 5
 file_path = "C:\\Users\\ykhan\\Downloads\\"
 
 
@@ -36,7 +36,7 @@ if __name__ == '__main__':
         for link in soup.findAll('a', {'class': 'basic-img'}):
             playlist.append('https:' + link['href'])
 
-    file_name = file_path + "\\" + url_thread_number + "_" + time.strftime("%Y%m%d-%H%M%S") + ".txt"
+    file_name = file_path + "\\" + gallery_name + "-" + time.strftime("%Y%m%d-%H%M%S") + ".txt"
     file_handle = open(file_name, "a+")
     print("Finished parsing jpg files. Writing to file now ... ")
     for val in progressbar.progressbar(range(len(playlist))):

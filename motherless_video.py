@@ -4,10 +4,10 @@ import time
 import urllib.request
 import progressbar
 
-base_url = "https://motherless.com/gv/clothed_lesbians_kissing"
-gallery_name = "clothed_lesbians_kissing"
+base_url = "https://motherless.com/GV61DBF8A"
+gallery_name = "tasty treats to take on a boat"
 suffix = "?page="
-page_count = 2
+page_count = 4
 file_path = "C:\\Users\\ykhan\\Downloads\\"
 
 
