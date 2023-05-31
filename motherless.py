@@ -20,7 +20,7 @@ def get_img_url(base_url):
     file_handle = open(file_name, "a+")
     for page in progressbar.progressbar(range(page_count)):
         url = str(url_split[0]) + "=" + str(page + 1)
-        print("\n", url)
+        # print("\n", url)
         page = requests.get(url)
         soup = bs4.BeautifulSoup(page.content, "html.parser")
         for link in soup.findAll('a', {'class': 'img-container'}):
@@ -33,7 +33,8 @@ def get_img_url(base_url):
 if __name__ == '__main__':
 
     list_of_urls = [
-        "https://motherless.com/gi/awesome_galleries_ect_of_teens__18__?page=2839"
+        "https://motherless.com/gi/awesome_galleries_ect_of_teens__18__?page=2838",
+        "https://motherless.com/gi/__several_porn_____?page=13763"
     ]
 
     for el in range(len(list_of_urls)):

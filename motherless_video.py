@@ -4,12 +4,11 @@ import time
 import urllib.request
 import progressbar
 
-base_url = "https://motherless.com/GV61DBF8A"
-gallery_name = "tasty treats to take on a boat"
+base_url = "https://motherless.com/gv/forced_entry__rape_1"
+gallery_name = "forced_entry__rape_1"
 suffix = "?page="
-page_count = 4
+page_count = 87
 file_path = "C:\\Users\\ykhan\\Downloads\\"
-
 
 def get_html_content(url):
     return bs4.BeautifulSoup(requests.get(url).content, "html.parser")

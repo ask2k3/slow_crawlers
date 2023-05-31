@@ -30,21 +30,21 @@ def get_actual_image_url(img_url):
 if __name__ == '__main__':
 
     list_of_urls = [
-        "https://www.listal.com/olivia-ponton/pictures"
+        "https://www.listal.com/rachel-ann-yampolsky/pictures/28"
     ]
 
-    num_of_pages = [23]
-
-    gallery_title = "olivia-ponton"
-
     for el in range(len(list_of_urls)):
-        print("\n Processing Gallery ... \n ", list_of_urls[el])
-        list_of_urls = get_img_url(list_of_urls[el], num_of_pages[el], gallery_title[el])
+        url_split = list_of_urls[el].split("/")
+        page_count = int(url_split[-1])
 
-    file_name = file_path + "\\" + gallery_title + "-" + time.strftime("%Y%m%d-%H%M%S") + ".txt"
-    file_handle = open(file_name, "a+")
+        gallery_title = url_split[-3]
+        print("\n Processing Gallery ... \n ", gallery_title)
+        updated_list_of_urls = get_img_url(list_of_urls[el], page_count, gallery_title)
 
-    for el in progressbar.progressbar(range(len(list_of_urls))):
-        final_url = get_actual_image_url(list_of_urls[el])
-        file_handle.write(str(final_url) + "\n")
-    file_handle.close()
+        file_name = file_path + "\\" + gallery_title + "-" + time.strftime("%Y%m%d-%H%M%S") + ".txt"
+        file_handle = open(file_name, "a+")
+
+        for elx in progressbar.progressbar(range(len(updated_list_of_urls))):
+            final_url = get_actual_image_url(updated_list_of_urls[elx])
+            file_handle.write(str(final_url) + "\n")
+        file_handle.close()
